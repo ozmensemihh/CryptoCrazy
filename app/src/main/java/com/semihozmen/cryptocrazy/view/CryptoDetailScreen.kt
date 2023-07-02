@@ -23,6 +23,7 @@ import androidx.compose.ui.layout.ModifierInfo
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
@@ -41,10 +42,10 @@ fun CryptoDetailScreen(
     
     Box(modifier = Modifier
         .fillMaxSize()
-        .background(MaterialTheme.colorScheme.primary),
+        .background(color = Color.Cyan),
     contentAlignment = Alignment.Center) {
 
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.background(Color.White)) {
 
             /*
             var cryptoItem by remember {
@@ -64,7 +65,7 @@ fun CryptoDetailScreen(
 
             Box(modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.secondary),
+                .background(color = Color.White),
             contentAlignment = Alignment.Center){
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
@@ -75,7 +76,8 @@ fun CryptoDetailScreen(
                             Text(text = selectedCrypto.name,
                             style = MaterialTheme.typography.bodyLarge,
                             fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center)
+                            textAlign = TextAlign.Center,
+                            fontSize = 40.sp)
 
                             Image(painter = rememberImagePainter(data = selectedCrypto.logo_url), contentDescription = selectedCrypto.name,
                             modifier = Modifier
